@@ -1,33 +1,41 @@
 import time
+import os
 
-def print_umbrella():
-    umbrella = [
-        "    .-^-.",
-        "   /_/_\\_\\",
-        "   |' ' ' ' ' ' ' ' ' |",
-        "   |' ' ' ' ' ' ' ' ' |",
-        "    \\_\\_\\_/\\_\\_\\_/",
-        "       |     |",
-        "       |     |",
-        "       |     |",
-        "       |     |",
-        "       |     |",
-        "       |     |",
-        "       |     |",
-        "       '-----'"
+def print_donut(frame):
+    donut_frames = [
+        [
+            "      .-^-.",
+            "    .'=^=^='.",
+            "   /=^=^=^=^=\\",
+            "  :^= HAPPY =^;",
+            "  |^ DONUT!  ^|",
+            "  :^=^=^=^=^=^;",
+            "   \\=^=^=^=^=/",
+            "    `.=^=^=.'",
+            "      `~~~`"
+        ],
+        [
+            "      .-^-.",
+            "    .'=^=^='.",
+            "   /=^=^=^=^=\\",
+            "  :^= DANCING =^;",
+            "  |^ DONUT!  ^|",
+            "  :^=^=^=^=^=^;",
+            "   \\=^=^=^=^=/",
+            "    `.=^=^=.'",
+            "      `~~~`"
+        ]
     ]
-    for line in umbrella:
+    for line in donut_frames[frame]:
         print(line)
 
-def laughing_sound():
-    laughs = ["Ha", "HaHa", "HaHaHa", "HaHaHaHa", "HaHaHaHaHa"]
-    for laugh in laughs:
-        print(laugh)
+def dancing_donut():
+    frame = 0
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print_donut(frame)
+        frame = (frame + 1) % 2
         time.sleep(0.5)
 
-def laughing_umbrella():
-    print_umbrella()
-    laughing_sound()
-
 if __name__ == "__main__":
-    laughing_umbrella()
+    dancing_donut()
